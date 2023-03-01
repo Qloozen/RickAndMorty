@@ -19,7 +19,7 @@ struct CharacterModel: Codable {
     let image: String
     let episode: [String]
     let url: String
-    let created: Date
+    let created: String
 }
 
 enum CharacterStatus: String, Codable {
