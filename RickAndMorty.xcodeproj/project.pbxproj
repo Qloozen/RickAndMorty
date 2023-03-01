@@ -19,8 +19,8 @@
 		BF652E4C29AE9DED00FCBF14 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF652E4B29AE9DED00FCBF14 /* LocationModel.swift */; };
 		BF652E4E29AE9DF700FCBF14 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF652E4D29AE9DF700FCBF14 /* EpisodeModel.swift */; };
 		BF652E5229AEA80600FCBF14 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF652E5129AEA80600FCBF14 /* APIService.swift */; };
-		BF652E5D29AEA8AC00FCBF14 /* CharacterListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF652E5C29AEA8AC00FCBF14 /* CharacterListViewViewModel.swift */; };
 		BF652E6329AEA92F00FCBF14 /* GenericResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF652E6229AEA92F00FCBF14 /* GenericResponseModel.swift */; };
+		BF8A548729AF5E8000C43799 /* CharacterListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A548629AF5E8000C43799 /* CharacterListViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +37,8 @@
 		BF652E4B29AE9DED00FCBF14 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		BF652E4D29AE9DF700FCBF14 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
 		BF652E5129AEA80600FCBF14 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		BF652E5C29AEA8AC00FCBF14 /* CharacterListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewViewModel.swift; sourceTree = "<group>"; };
 		BF652E6229AEA92F00FCBF14 /* GenericResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponseModel.swift; sourceTree = "<group>"; };
+		BF8A548629AF5E8000C43799 /* CharacterListViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,7 @@
 		BF652E3929AE9A1B00FCBF14 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				BF652E5C29AEA8AC00FCBF14 /* CharacterListViewViewModel.swift */,
+				BF8A548629AF5E8000C43799 /* CharacterListViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 			files = (
 				BF652E3129AE8B5F00FCBF14 /* CharacterListView.swift in Sources */,
 				BF652E4E29AE9DF700FCBF14 /* EpisodeModel.swift in Sources */,
-				BF652E5D29AEA8AC00FCBF14 /* CharacterListViewViewModel.swift in Sources */,
+				BF8A548729AF5E8000C43799 /* CharacterListViewViewModel.swift in Sources */,
 				BF652E4C29AE9DED00FCBF14 /* LocationModel.swift in Sources */,
 				BF652E3329AE939700FCBF14 /* LocationListView.swift in Sources */,
 				BF652E4429AE9C0800FCBF14 /* CharacterModel.swift in Sources */,
