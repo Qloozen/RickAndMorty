@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct CharacterListView: View {
+    @StateObject var viewModel = CharacterListViewViewModel()
+    
+    private let gridItems: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
+    
     var body: some View {
-        Text("Characters")
+        ScrollView {
+            LazyVGrid(columns: gridItems) {
+                ForEach(viewModel.characters, id: \.id) { character in
+                    CharacterListCellView(character: character)
+                }
+            }
+        }
     }
 }
 
