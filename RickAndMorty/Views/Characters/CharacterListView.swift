@@ -19,7 +19,11 @@ struct CharacterListView: View {
         ScrollView {
             LazyVGrid(columns: gridItems) {
                 ForEach(viewModel.characters, id: \.id) { character in
-                    CharacterListCellView(character: character)
+                    NavigationLink {
+                        CharacterDetailView(viewModel: CharacterDetailViewViewModel(character))
+                    } label: {
+                        CharacterListCellView(character: character)
+                    }
                 }
             }
         }

@@ -23,7 +23,9 @@ struct CharacterListCellView: View {
                     .lineLimit(1)
                 Text(character.status.rawValue)
                     .font(.system(size: 14, weight: .light))
-            }.padding(5)
+            }
+            .tint(.primary)
+            .padding(5)
         }
         .background(Color(UIColor.tertiarySystemBackground))
         .clipShape(RoundedRectangle(cornerRadius: 10))
