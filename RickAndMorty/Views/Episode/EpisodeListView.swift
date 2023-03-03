@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EpisodeListView: View {
     @State private var selection = "Season 1"
+    @StateObject var viewModel = EpisodeListViewModel()
 
     let colors: [Color] = [.red, .green, .blue]
     
@@ -40,21 +41,8 @@ struct EpisodeListView: View {
                 .border(.red)
                 .pickerStyle(.menu)
                 
-                ForEach(0...10, id: \.self) { _ in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Episode name")
-                            Text("S01E01, 30 dec 2022")
-                        }
-                        .padding(10)
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.green)
-                            .padding(20)
-                    }
-                    .background(Color(UIColor.secondarySystemBackground))
-                    .frame(maxWidth: .infinity)
-                    .cornerRadius(5)
+                ForEach(viewModel.episodes, id: \.id) { episode in
+                    EpisodeListCellView(episode: episode)
                 }
             }
         }
