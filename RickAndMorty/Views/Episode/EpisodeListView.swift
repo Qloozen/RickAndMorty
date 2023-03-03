@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct EpisodeListView: View {
-    @State private var selection = "Season 1"
     @StateObject var viewModel = EpisodeListViewModel()
-
+    @State private var selection: Int = 0;
+    
     let colors: [Color] = [.red, .green, .blue]
     
     var body: some View {
@@ -27,24 +27,39 @@ struct EpisodeListView: View {
                         .foregroundColor(.clear)
                         .frame(height: 150)
                         .background(LinearGradient(
-                            gradient: Gradient(colors: [.clear, .black]),
+                            gradient: Gradient(colors: [.clear, Color(UIColor.systemBackground)]),
                             startPoint: .top,
                             endPoint: .bottom)
                         )
                 }
-                    
-                Picker("Select a season", selection: $selection) {
-                    ForEach(["season 1", "season 2", "season 3"], id: \.self) {
-                        Text($0)
+                HStack{
+                    Picker("Select a season", selection: $selection) {
+                        ForEach(viewModel.seasons, id: \.self) {
+                            Text($0 == 0 ? "All" : " Season \($0)")
+                        }
                     }
+                    .onChange(of: selection, perform: { _ in
+                        viewModel.sortOnSeason(selection)
+                    })
+                    .pickerStyle(.menu)
+                    .tint(Color.primary)
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .border(Color(UIColor.tertiarySystemBackground))
+                    .cornerRadius(5)
+                    
+                    Spacer()
+                    
+                    Text("Showing: \(viewModel.filteredEpisodes.count)")
                 }
-                .border(.red)
-                .pickerStyle(.menu)
+                .padding(20)
                 
-                ForEach(viewModel.episodes, id: \.id) { episode in
+                ForEach(viewModel.filteredEpisodes, id: \.id) { episode in
                     EpisodeListCellView(episode: episode)
                 }
+                .padding(.horizontal, 20)
+
             }
+
         }
     }
 }
