@@ -24,10 +24,10 @@ struct CharacterDetailView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 300)
                     .cornerRadius(10)
-                
+
                 Text(viewModel.character.name)
                     .font(.system(size: 24, weight: .bold))
-                
+
                 LazyVGrid(
                     columns: gridItems,
                     spacing: 10
@@ -38,8 +38,18 @@ struct CharacterDetailView: View {
                             .navigationBarTitleDisplayMode(.inline)
                     }
                 }
+                ScrollView (.horizontal){
+                    LazyHGrid(
+                        rows: [gridItems[0]],
+                        spacing: 10
+                    ) {
+                        ForEach(viewModel.character.episode, id: \.self) { episodeUrl in
+                            CharacterEpisodeView(viewModel: .init(episodeUrl: episodeUrl))
+                        }
+                    }
+                }
             }
         }
-        
+
     }
 }

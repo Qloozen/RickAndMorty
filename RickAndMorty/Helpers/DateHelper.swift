@@ -23,8 +23,8 @@ final class DateHelper {
         return formatter
     }()
     
-    public static func formatDate(_ date: String) -> String? {
-        guard let dateObject = Self.dateFormatter.date(from: date) else {
+    public static func formatDate(_ date: String?) -> String? {
+        guard let date, let dateObject = Self.dateFormatter.date(from: date) else {
             return nil
         }
         let displayString = Self.shortDateFormatter.string(from: dateObject)

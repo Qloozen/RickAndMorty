@@ -10,6 +10,8 @@
 		BF01F5FC29B0BB9A00AC3C01 /* CharacterInfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF01F5FB29B0BB9A00AC3C01 /* CharacterInfoCardView.swift */; };
 		BF01F5FF29B0BBD500AC3C01 /* CharacterInfoCardViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF01F5FE29B0BBD500AC3C01 /* CharacterInfoCardViewViewModel.swift */; };
 		BF01F60229B1098200AC3C01 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF01F60129B1098200AC3C01 /* DateHelper.swift */; };
+		BF01F60429B1642800AC3C01 /* CharacterEpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF01F60329B1642800AC3C01 /* CharacterEpisodeViewModel.swift */; };
+		BF01F60829B1659F00AC3C01 /* CharacterEpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF01F60729B1659F00AC3C01 /* CharacterEpisodeView.swift */; };
 		BF652E2229AE330700FCBF14 /* RickAndMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF652E2129AE330700FCBF14 /* RickAndMortyApp.swift */; };
 		BF652E2429AE330700FCBF14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF652E2329AE330700FCBF14 /* ContentView.swift */; };
 		BF652E2629AE330800FCBF14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF652E2529AE330800FCBF14 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		BF01F5FB29B0BB9A00AC3C01 /* CharacterInfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoCardView.swift; sourceTree = "<group>"; };
 		BF01F5FE29B0BBD500AC3C01 /* CharacterInfoCardViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoCardViewViewModel.swift; sourceTree = "<group>"; };
 		BF01F60129B1098200AC3C01 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		BF01F60329B1642800AC3C01 /* CharacterEpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEpisodeViewModel.swift; sourceTree = "<group>"; };
+		BF01F60729B1659F00AC3C01 /* CharacterEpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEpisodeView.swift; sourceTree = "<group>"; };
 		BF652E1E29AE330700FCBF14 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF652E2129AE330700FCBF14 /* RickAndMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyApp.swift; sourceTree = "<group>"; };
 		BF652E2329AE330700FCBF14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 			children = (
 				BF8A549329AFD64900C43799 /* CharacterDetailViewViewModel.swift */,
 				BF01F5FE29B0BBD500AC3C01 /* CharacterInfoCardViewViewModel.swift */,
+				BF01F60329B1642800AC3C01 /* CharacterEpisodeViewModel.swift */,
 			);
 			path = CharacterDetails;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			children = (
 				BF8A549129AFD4B400C43799 /* CharacterDetailView.swift */,
 				BF01F5FB29B0BB9A00AC3C01 /* CharacterInfoCardView.swift */,
+				BF01F60729B1659F00AC3C01 /* CharacterEpisodeView.swift */,
 			);
 			path = CharacterDetails;
 			sourceTree = "<group>";
@@ -305,8 +311,10 @@
 				BF01F5FF29B0BBD500AC3C01 /* CharacterInfoCardViewViewModel.swift in Sources */,
 				BF8A548B29AF709800C43799 /* CharacterListCellView.swift in Sources */,
 				BF01F5FC29B0BB9A00AC3C01 /* CharacterInfoCardView.swift in Sources */,
+				BF01F60829B1659F00AC3C01 /* CharacterEpisodeView.swift in Sources */,
 				BF8A549229AFD4B400C43799 /* CharacterDetailView.swift in Sources */,
 				BF8A548729AF5E8000C43799 /* CharacterListViewViewModel.swift in Sources */,
+				BF01F60429B1642800AC3C01 /* CharacterEpisodeViewModel.swift in Sources */,
 				BF652E4C29AE9DED00FCBF14 /* LocationModel.swift in Sources */,
 				BF652E3329AE939700FCBF14 /* LocationListView.swift in Sources */,
 				BF652E4429AE9C0800FCBF14 /* CharacterModel.swift in Sources */,
