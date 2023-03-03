@@ -13,21 +13,28 @@ struct CharacterListCellView: View {
     let character: CharacterModel
     
     var body: some View {
-        VStack {
-            KFImage(URL(string: character.image))
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-            VStack {
+        ZStack (alignment: .topTrailing){
+            VStack (spacing: 0){
+                KFImage(URL(string: character.image))
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
                 Text(character.name)
                     .font(.system(size: 18, weight: .bold))
                     .lineLimit(1)
-                Text(character.status.rawValue)
-                    .font(.system(size: 14, weight: .light))
+                    .tint(.primary)
+                    .padding(10)
             }
-            .tint(.primary)
-            .padding(5)
+            .background(Color(UIColor.tertiarySystemBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            
+            Text(character.status.rawValue)
+                .font(.system(size: 14))
+                .padding(.horizontal, 5)
+                .foregroundColor(.white)
+                .background(character.status.tintColor)
+                .cornerRadius(5)
+                .offset(x: -10, y: 10)
+
         }
-        .background(Color(UIColor.tertiarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }

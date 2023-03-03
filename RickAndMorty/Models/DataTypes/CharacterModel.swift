@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct CharacterModel: Codable {
     let id: Int
@@ -26,6 +27,17 @@ enum CharacterStatus: String, Codable {
     case alive = "Alive"
     case dead = "Dead"
     case unknown = "unknown"
+    
+    var tintColor: Color {
+        switch self {
+        case .alive:
+            return .green
+        case .dead:
+            return .red
+        case .unknown:
+            return .orange
+        }
+    }
 }
 
 enum Gender: String, Codable {
