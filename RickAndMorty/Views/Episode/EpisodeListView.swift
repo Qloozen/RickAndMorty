@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EpisodeListView: View {
     @StateObject var viewModel = EpisodeListViewModel()
-    @State private var selection: Int = 0;
     
     let colors: [Color] = [.red, .green, .blue]
     
@@ -33,14 +32,11 @@ struct EpisodeListView: View {
                         )
                 }
                 HStack{
-                    Picker("Select a season", selection: $selection) {
+                    Picker("Select a season", selection: $viewModel.selectedSeason) {
                         ForEach(viewModel.seasons, id: \.self) {
                             Text($0 == 0 ? "All" : " Season \($0)")
                         }
                     }
-                    .onChange(of: selection, perform: { _ in
-                        viewModel.sortOnSeason(selection)
-                    })
                     .pickerStyle(.menu)
                     .tint(Color.primary)
                     .background(Color(UIColor.secondarySystemBackground))
@@ -54,10 +50,13 @@ struct EpisodeListView: View {
                 .padding(20)
                 
                 ForEach(viewModel.filteredEpisodes, id: \.id) { episode in
-                    EpisodeListCellView(episode: episode)
+                    EpisodeListCellView(episode: episode).onAppear()
                 }
                 .padding(.horizontal, 20)
 
+                Button("refresh") {
+                    viewModel.fetchAdditionalEpisodes()
+                }
             }
 
         }
