@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-final class CharacterInfoCardViewViewModel: ObservableObject {
+final class CharacterInfoCardViewModel: ObservableObject {
     @Published var type: CharacterInfoType
     @Published var displayType: String
     @Published var value: String

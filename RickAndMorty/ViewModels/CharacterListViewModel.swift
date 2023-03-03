@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CharacterListViewViewModel: ObservableObject {
+final class CharacterListViewModel: ObservableObject {
     @Published var characters: [CharacterModel] = []
     
     init() {

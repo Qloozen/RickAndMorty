@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct CharacterDetailView: View {
-    @StateObject var viewModel: CharacterDetailViewViewModel
+    @StateObject var viewModel: CharacterDetailViewModel
     
     private let gridItems: [GridItem] = [
         GridItem(.flexible(), spacing: 10),
@@ -32,7 +32,7 @@ struct CharacterDetailView: View {
                     columns: gridItems,
                     spacing: 10
                 ) {
-                    ForEach(viewModel.characterInfoCardViewViewModels, id: \.type) { model in
+                    ForEach(viewModel.characterInfoCardViewModels, id: \.type) { model in
                         CharacterInfoCardView(viewModel: model)
                             .navigationTitle(viewModel.character.name)
                             .navigationBarTitleDisplayMode(.inline)

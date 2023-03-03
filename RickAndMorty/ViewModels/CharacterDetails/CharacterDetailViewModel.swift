@@ -7,13 +7,13 @@
 
 import Foundation
 
-final class CharacterDetailViewViewModel: ObservableObject {
+final class CharacterDetailViewModel: ObservableObject {
     @Published var character: CharacterModel
-    @Published var characterInfoCardViewViewModels: [CharacterInfoCardViewViewModel]
+    @Published var characterInfoCardViewModels: [CharacterInfoCardViewModel]
     
     init(_ character: CharacterModel) {
         self.character = character
-        self.characterInfoCardViewViewModels = [
+        self.characterInfoCardViewModels = [
             .init(.status, character.status.rawValue),
             .init(.gender, character.gender.rawValue),
             .init(.type, character.type),

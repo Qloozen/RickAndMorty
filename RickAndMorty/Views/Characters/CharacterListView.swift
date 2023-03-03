@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharacterListView: View {
-    @StateObject var viewModel = CharacterListViewViewModel()
+    @StateObject var viewModel = CharacterListViewModel()
     
     private let gridItems: [GridItem] = [
         GridItem(.flexible()),
@@ -20,7 +20,7 @@ struct CharacterListView: View {
             LazyVGrid(columns: gridItems) {
                 ForEach(viewModel.characters, id: \.id) { character in
                     NavigationLink {
-                        CharacterDetailView(viewModel: CharacterDetailViewViewModel(character))
+                        CharacterDetailView(viewModel: CharacterDetailViewModel(character))
                     } label: {
                         CharacterListCellView(character: character)
                     }

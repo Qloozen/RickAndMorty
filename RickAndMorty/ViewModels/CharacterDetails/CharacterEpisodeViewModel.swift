@@ -10,7 +10,6 @@ import Foundation
 
 
 final class CharacterEpisodeViewModel: ObservableObject {
-    
     @Published var name: String = ""
     @Published var episode: String = ""
     @Published var airDate: String = ""

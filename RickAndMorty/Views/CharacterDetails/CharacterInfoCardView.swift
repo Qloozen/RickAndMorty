@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharacterInfoCardView: View {
-    @StateObject var viewModel: CharacterInfoCardViewViewModel
+    @StateObject var viewModel: CharacterInfoCardViewModel
     
     var body: some View {
         VStack {
