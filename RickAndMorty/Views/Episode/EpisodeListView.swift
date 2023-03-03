@@ -48,11 +48,16 @@ struct EpisodeListView: View {
                     Text("Showing: \(viewModel.filteredEpisodes.count)")
                 }
                 .padding(20)
-                
-                ForEach(viewModel.filteredEpisodes, id: \.id) { episode in
-                    EpisodeListCellView(episode: episode).onAppear()
+                LazyVStack{
+                    ForEach(viewModel.filteredEpisodes, id: \.id) { episode in
+                        EpisodeListCellView(episode: episode).onAppear {
+                            if viewModel.filteredEpisodes.last?.id == episode.id {
+                                viewModel.fetchAdditionalEpisodes()
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
                 }
-                .padding(.horizontal, 20)
 
                 Button("refresh") {
                     viewModel.fetchAdditionalEpisodes()
