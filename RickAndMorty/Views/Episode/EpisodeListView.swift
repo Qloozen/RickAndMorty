@@ -51,7 +51,8 @@ struct EpisodeListView: View {
                 LazyVStack{
                     ForEach(viewModel.filteredEpisodes, id: \.id) { episode in
                         NavigationLink(destination: EpisodeDetailView(viewModel: .init(url: episode.url))) {
-                            EpisodeListCellView(episode: episode).onAppear {
+                            
+                            RowView(title: episode.name, subTitle: "\(episode.episode), \(episode.air_date)").onAppear {
                                 if viewModel.filteredEpisodes.last?.id == episode.id {
                                     viewModel.fetchAdditionalEpisodes()
                                 }

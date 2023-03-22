@@ -26,7 +26,8 @@
 		BF652E4E29AE9DF700FCBF14 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF652E4D29AE9DF700FCBF14 /* EpisodeModel.swift */; };
 		BF652E5229AEA80600FCBF14 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF652E5129AEA80600FCBF14 /* APIService.swift */; };
 		BF652E6329AEA92F00FCBF14 /* GenericResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF652E6229AEA92F00FCBF14 /* GenericResponseModel.swift */; };
-		BF6C225D29B2387000C92459 /* EpisodeListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C225C29B2387000C92459 /* EpisodeListCellView.swift */; };
+		BF6A5D7429CB78F90026AA40 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A5D7329CB78F80026AA40 /* RowView.swift */; };
+		BF6A5D7629CB7CF40026AA40 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6A5D7529CB7CF40026AA40 /* LocationViewModel.swift */; };
 		BF6C226029B26B0D00C92459 /* EpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C225F29B26B0D00C92459 /* EpisodeDetailView.swift */; };
 		BF6C226329B26F1700C92459 /* EpisodeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C226229B26F1700C92459 /* EpisodeDetailViewModel.swift */; };
 		BF8A548729AF5E8000C43799 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8A548629AF5E8000C43799 /* CharacterListViewModel.swift */; };
@@ -57,7 +58,8 @@
 		BF652E4D29AE9DF700FCBF14 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
 		BF652E5129AEA80600FCBF14 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		BF652E6229AEA92F00FCBF14 /* GenericResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponseModel.swift; sourceTree = "<group>"; };
-		BF6C225C29B2387000C92459 /* EpisodeListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListCellView.swift; sourceTree = "<group>"; };
+		BF6A5D7329CB78F80026AA40 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		BF6A5D7529CB7CF40026AA40 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		BF6C225F29B26B0D00C92459 /* EpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailView.swift; sourceTree = "<group>"; };
 		BF6C226229B26F1700C92459 /* EpisodeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewModel.swift; sourceTree = "<group>"; };
 		BF8A548629AF5E8000C43799 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
@@ -157,10 +159,11 @@
 		BF652E2F29AE8B2D00FCBF14 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF6A5D7229CB78D20026AA40 /* Shared */,
 				BF6C225E29B26ABB00C92459 /* EpisodeDetails */,
 				BF8A549029AFD49500C43799 /* CharacterDetails */,
 				BF652E3B29AE9A3600FCBF14 /* Characters */,
-				BF652E3C29AE9A4700FCBF14 /* Locations */,
+				BF652E3C29AE9A4700FCBF14 /* Location */,
 				BF652E3D29AE9A5300FCBF14 /* Episode */,
 				BF652E3E29AE9A8400FCBF14 /* Settings */,
 			);
@@ -179,6 +182,7 @@
 		BF652E3929AE9A1B00FCBF14 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				BF6A5D7129CB761B0026AA40 /* Location */,
 				BF6C226129B26EBE00C92459 /* EpisodeDetails */,
 				BF01F60A29B2329800AC3C01 /* Episode */,
 				BF01F5FD29B0BBB100AC3C01 /* CharacterDetails */,
@@ -204,19 +208,18 @@
 			path = Characters;
 			sourceTree = "<group>";
 		};
-		BF652E3C29AE9A4700FCBF14 /* Locations */ = {
+		BF652E3C29AE9A4700FCBF14 /* Location */ = {
 			isa = PBXGroup;
 			children = (
 				BF652E3229AE939700FCBF14 /* LocationListView.swift */,
 			);
-			path = Locations;
+			path = Location;
 			sourceTree = "<group>";
 		};
 		BF652E3D29AE9A5300FCBF14 /* Episode */ = {
 			isa = PBXGroup;
 			children = (
 				BF652E3429AE93DC00FCBF14 /* EpisodeListView.swift */,
-				BF6C225C29B2387000C92459 /* EpisodeListCellView.swift */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -245,6 +248,22 @@
 				BF652E6229AEA92F00FCBF14 /* GenericResponseModel.swift */,
 			);
 			path = ResponseTypes;
+			sourceTree = "<group>";
+		};
+		BF6A5D7129CB761B0026AA40 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				BF6A5D7529CB7CF40026AA40 /* LocationViewModel.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		BF6A5D7229CB78D20026AA40 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BF6A5D7329CB78F80026AA40 /* RowView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		BF6C225E29B26ABB00C92459 /* EpisodeDetails */ = {
@@ -351,8 +370,8 @@
 			files = (
 				BF652E3129AE8B5F00FCBF14 /* CharacterListView.swift in Sources */,
 				BF8A549429AFD64900C43799 /* CharacterDetailViewModel.swift in Sources */,
-				BF6C225D29B2387000C92459 /* EpisodeListCellView.swift in Sources */,
 				BF652E4E29AE9DF700FCBF14 /* EpisodeModel.swift in Sources */,
+				BF6A5D7629CB7CF40026AA40 /* LocationViewModel.swift in Sources */,
 				BF6C226029B26B0D00C92459 /* EpisodeDetailView.swift in Sources */,
 				BF01F5FF29B0BBD500AC3C01 /* CharacterInfoCardViewModel.swift in Sources */,
 				BF8A548B29AF709800C43799 /* CharacterListCellView.swift in Sources */,
@@ -365,6 +384,7 @@
 				BF652E4C29AE9DED00FCBF14 /* LocationModel.swift in Sources */,
 				BF652E3329AE939700FCBF14 /* LocationListView.swift in Sources */,
 				BF652E4429AE9C0800FCBF14 /* CharacterModel.swift in Sources */,
+				BF6A5D7429CB78F90026AA40 /* RowView.swift in Sources */,
 				BF652E3529AE93DC00FCBF14 /* EpisodeListView.swift in Sources */,
 				BF652E5229AEA80600FCBF14 /* APIService.swift in Sources */,
 				BF652E3729AE93F800FCBF14 /* SettingsView.swift in Sources */,

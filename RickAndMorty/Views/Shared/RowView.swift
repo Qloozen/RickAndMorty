@@ -1,26 +1,30 @@
 //
-//  EpisodeListCellView.swift
+//  RowView.swift
 //  RickAndMorty
 //
-//  Created by Qiang Loozen on 03/03/2023.
+//  Created by Qiang Loozen on 22/03/2023.
 //
 
 import SwiftUI
 
-struct EpisodeListCellView: View {
-    let episode: EpisodeModel;
+struct RowView: View {
+    
+    @State var title: String
+    @State var subTitle: String?
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(episode.name).font(.system(
+                Text(title).font(.system(
                     size: 18,
                     weight: .bold)
                 )
-                Text("\(episode.episode), \(episode.air_date)").font(.system(
-                    size: 14,
-                    weight: .regular)
-                )
+                if let subTitle {
+                    Text(subTitle).font(.system(
+                        size: 14,
+                        weight: .regular)
+                    )
+                }
             }
             .padding(15)
             
@@ -34,5 +38,11 @@ struct EpisodeListCellView: View {
         .background(Color(UIColor.secondarySystemBackground))
         .frame(maxWidth: .infinity)
         .cornerRadius(5)
+    }
+}
+
+struct RowView_Previews: PreviewProvider {
+    static var previews: some View {
+        RowView(title: "test", subTitle: "sub")
     }
 }
