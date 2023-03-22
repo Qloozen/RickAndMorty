@@ -50,17 +50,15 @@ struct EpisodeListView: View {
                 .padding(20)
                 LazyVStack{
                     ForEach(viewModel.filteredEpisodes, id: \.id) { episode in
-                        EpisodeListCellView(episode: episode).onAppear {
-                            if viewModel.filteredEpisodes.last?.id == episode.id {
-                                viewModel.fetchAdditionalEpisodes()
+                        NavigationLink(destination: EpisodeDetailView(viewModel: .init(url: episode.url))) {
+                            EpisodeListCellView(episode: episode).onAppear {
+                                if viewModel.filteredEpisodes.last?.id == episode.id {
+                                    viewModel.fetchAdditionalEpisodes()
+                                }
                             }
                         }
                     }
                     .padding(.horizontal, 20)
-                }
-
-                Button("refresh") {
-                    viewModel.fetchAdditionalEpisodes()
                 }
             }
 

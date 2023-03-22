@@ -30,6 +30,7 @@ struct EpisodeListCellView: View {
                 .foregroundColor(.green)
                 .padding(20)
         }
+        .tint(.primary)
         .background(Color(UIColor.secondarySystemBackground))
         .frame(maxWidth: .infinity)
         .cornerRadius(5)
