@@ -33,7 +33,6 @@ struct LocationDetailsView: View {
                 }
             }
         }
-
         .padding(20)
     }
 }
