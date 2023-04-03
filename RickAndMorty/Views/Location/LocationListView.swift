@@ -30,9 +30,13 @@ struct LocationListView: View {
             }
             LazyVStack {
                 ForEach(viewModel.locations, id: \.id) { location in
-                    RowView(
-                        title: location.name,
-                        subTitle: location.dimension)
+                    NavigationLink {
+                        LocationDetailsView(viewModel: LocationDetailsViewModel(location: location))
+                    } label: {
+                        RowView(
+                            title: location.name,
+                            subTitle: location.dimension)
+                    }
                 }
             }.padding(20)
         }

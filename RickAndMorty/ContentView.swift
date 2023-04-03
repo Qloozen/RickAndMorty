@@ -36,6 +36,12 @@ struct ContentView: View {
                 Label("Setting", systemImage: "gear")
             }
         }
+        .onAppear {
+            // Fix to always show the tabbar background
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }
     }
 }
 
